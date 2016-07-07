@@ -1,0 +1,19 @@
+{
+  "name": "mmx-bootstrap-extensions",
+  "version": "1.0.0",
+  "description": "CSS-classes and JavaScript to extend Bootstrap",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Metamatrix/mmx-bootstrap-extensions.git"
+  },
+  "author": "Metamatrix",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Metamatrix/mmx-bootstrap-extensions/issues"
+  },
+  "homepage": "https://github.com/Metamatrix/mmx-bootstrap-extensions#readme"
+}

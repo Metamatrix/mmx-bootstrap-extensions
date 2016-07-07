@@ -1,0 +1,8 @@
+﻿mixin img-ph(width, height, bgColor, frontColor)
+   
+    unless bgColor
+        - var bgColor = settings.imgPhBgColor
+    unless frontColor
+        - var frontColor = settings.imgPhFrontColor
+
+    img(src="http://placehold.it/#{width}x#{height}/#{bgColor}/#{frontColor}")&attributes(attributes)

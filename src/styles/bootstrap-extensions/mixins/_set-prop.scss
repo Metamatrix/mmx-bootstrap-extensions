@@ -1,0 +1,5 @@
+﻿@mixin set-prop($prop-list, $value) {
+    @each $prop in $prop-list {
+        #{$prop}: $value;
+    }
+}

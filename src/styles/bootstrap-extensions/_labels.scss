@@ -1,0 +1,8 @@
+//
+// Labels
+// --------------------------------------------------
+
+.label-secondary {
+	color: $label-secondary-color;
+	@include label-variant($label-secondary-bg);
+}

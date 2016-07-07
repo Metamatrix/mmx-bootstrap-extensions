@@ -1,0 +1,19 @@
+﻿//
+// Link block
+// - Link block is link with multiple child elements. The link block itself should have no hover effect. Each child element should be underlined when hovered.
+// --------------------------------------------------
+
+a.link-block {
+	
+	&:hover,
+	* {
+		text-decoration: none;
+	}
+
+	.link-block-item {
+		&:hover {
+			text-decoration: $link-hover-decoration;
+		}
+	}
+
+}

@@ -1,0 +1,137 @@
+﻿//
+// Navs
+// --------------------------------------------------
+
+
+// Tree
+// -------------------------
+
+.nav-tree > li {
+	> a,
+	ul > li > a {
+		padding: $nav-tree-link-padding;
+		border-bottom: $nav-tree-link-border;
+	}
+}
+
+.nav-tree {
+	> li {
+		float: none;
+		// Links
+		> a {
+			color: $nav-tree-link-color;
+			background-color: $nav-tree-link-bg;
+			border-radius: $nav-tree-border-radius;
+			margin-left: 0;
+			margin-right: 0;
+            border-color: darken($nav-tree-link-bg, 10%);
+			// Hover and focus state for links
+			&:hover,
+			&:focus {
+				color: $nav-tree-link-hover-color;
+				background-color: $nav-tree-link-hover-bg;
+			}
+		}
+		// Active/expanded state link
+		&.active,
+		&.expanded {
+			> a {
+				color: $nav-tree-active-link-color;
+				background-color: $nav-tree-active-link-bg;
+				// Hover and focus for active link
+				&:hover,
+				&:focus {
+					color: $nav-tree-active-link-hover-color;
+					background-color: $nav-tree-active-link-hover-bg;
+				}
+			}
+		}
+
+		> .nav-expander {
+			color: $nav-tree-link-color;
+		}
+
+		&.active,
+		&.expanded {
+			> .nav-expander {
+				color: $nav-tree-active-link-color;
+			}
+		}
+
+		// Sub levels
+		// ------------------
+		 ul {
+			> li {
+				// Sub levels links
+				> a {
+					padding-left: $nav-sublevel-indent;
+					color: $nav-tree-sublevel-link-color;
+					background-color: $nav-tree-sublevel-link-bg;
+					// Sub levels hover and focus links
+					&:hover,
+					&:focus {
+						color: $nav-tree-sublevel-link-hover-color;
+						background-color: $nav-tree-sublevel-link-hover-bg;
+					}
+				}
+				// Sub levels active state link
+				&.active,
+				&.expanded {
+					> a {
+						color: $nav-tree-sublevel-active-link-color;
+						background-color: $nav-tree-sublevel-active-link-bg;
+						// Sub levels hover and focus links
+						&:hover,
+						&:focus {
+							color: $nav-tree-sublevel-active-link-hover-color;
+							background-color: $nav-tree-sublevel-active-link-hover-bg;
+						}
+					}
+				}
+				> .nav-expander {
+					color: $nav-tree-sublevel-link-color;
+				}
+				&.active,
+				&.expanded {
+					> .nav-expander {
+						color: $nav-tree-sublevel-active-link-color;
+					}
+				}
+			}
+		}
+
+		// Level 3 spacing
+		> ul > li > ul > li > a {
+			padding-left: $nav-sublevel-indent * 2;
+		}
+
+        // Level 4 spacing
+		> ul > li > ul > li > ul > li > a {
+			padding-left: $nav-sublevel-indent * 3;
+		}
+
+        // Level 5 spacing
+		> ul > li > ul > li > ul > li > ul > li > a {
+			padding-left: $nav-sublevel-indent * 4;
+		}
+	}
+
+	// Spacing
+	li + li {
+		margin-top: $nav-tree-link-spacing-y;
+	}
+
+	.nav-expander {
+		position: absolute;
+		top: 0;
+		right: 0;
+		color: inherit;
+		padding: $nav-tree-link-padding;
+	}
+
+	.active {
+		.nav-expander {
+		color: $nav-tree-active-link-color;
+		}
+	}
+}

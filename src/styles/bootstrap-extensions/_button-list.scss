@@ -1,0 +1,14 @@
+﻿//
+// Button list
+// --------------------------------------------------
+
+.btn-list {
+	.btn {
+		margin-right: $btn-list-margin-right;
+		margin-bottom: $btn-list-margin-bottom;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}

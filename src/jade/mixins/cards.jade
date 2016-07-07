@@ -1,0 +1,12 @@
+//- card
+mixin card(type,title)
+	.card(class="card-#{type}")
+		.card-header
+			h3.card-title= title
+		.card-block
+			block
+
+//- panel-default
+mixin card-default(title)
+	+card("default",title)
+		block

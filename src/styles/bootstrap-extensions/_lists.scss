@@ -1,0 +1,70 @@
+﻿// Lists
+// -------------------------
+
+
+// Article list
+.article-list {
+	@extend .list-unstyled;
+
+	> li {
+		margin: $article-list-margin 0;
+	}
+}
+
+// Link list vertical
+.link-list {
+	@extend .list-unstyled;
+
+	li {
+		position: relative;
+		margin-bottom: $link-list-margin;
+	}
+
+	a {
+		display: block;
+		padding-left: 1.2em;
+	}
+
+	.fa {
+		position: absolute;
+		top: 3px;
+		left: 0;
+	}
+}
+
+// Link list inline
+.link-list-inline {
+	@extend .list-inline;
+
+	li {
+		margin-right: $link-list-inline-spacing / 2;
+		margin-bottom: .5em;
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		@respondto(sm) {
+			margin-right: $link-list-inline-spacing;
+		}
+	}
+}
+
+// Lists columns
+.list-col-sm-2 {
+	@include respondto(sm) {
+		@include columns(2);
+	}
+}
+
+.list-col-md-2 {
+	@include respondto(md) {
+		@include columns(2);
+	}
+}
+
+.list-col-lg-2 {
+	@include respondto(lg) {
+		@include columns(2);
+	}
+}

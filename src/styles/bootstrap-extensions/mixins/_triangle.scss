@@ -1,0 +1,47 @@
+﻿@mixin triangle($direction: "up", $width: 10px, $height: 10px, $color: #ccc) {
+
+    $calc-width: $width;
+    $calc-height: $height;
+
+    @if $direction == "right" or $direction == "left" {
+        $calc-width: $width;
+        $calc-height: $height / 2;
+    } @else {
+        $calc-width: $width / 2;
+        $calc-height: $height;
+    }
+
+    width: 0;
+    height: 0;
+
+    @if $direction == "right" {
+        border-top: $calc-height solid transparent;
+        border-bottom: $calc-height solid transparent;
+        border-left: $calc-width solid $color;
+    } @else if $direction == "down" {
+        border-left: $calc-width solid transparent;
+        border-right: $calc-width solid transparent;
+        border-top: $calc-height solid $color;
+    } @else if $direction == "left" {
+        border-top: $calc-height solid transparent;
+        border-bottom: $calc-height solid transparent; 
+        border-right: $calc-width solid $color;
+    } @else {
+        border-left: $calc-width solid transparent;
+        border-right: $calc-width solid transparent;
+        border-bottom: $calc-height solid $color;
+    }
+}
+
+@mixin triangle-variation($direction: "up", $color: #ccc) {
+
+    @if $direction == "right" {
+        border-left-color: $color;
+    } @else if $direction == "down" {
+        border-top-color: $color;
+    } @else if $direction == "left" {
+        border-right-color: $color;
+    } @else {
+        border-bottom-color: $color;
+    }
+}

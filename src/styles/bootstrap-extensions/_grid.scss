@@ -1,0 +1,113 @@
+﻿//
+// Grid system extensions
+// --------------------------------------------------
+
+$size-list: xs sm md lg;
+
+/* Provides equal height for the columns in a row. Can only be used for columns on one row. */
+.row-eq {
+	display: table;
+	width: 100%;
+	height: 100%;
+
+	> [class*='col-'] {
+		display: table-cell;
+		float: none;
+		height: 100%;
+		margin-top: 0;
+		margin-bottom: 0;
+		vertical-align: top;
+	}
+
+	> .col-middle {
+		vertical-align: middle;
+	}
+
+	> .col-bottom {
+		vertical-align: bottom;
+	}
+}
+
+@each $size in $size-list {
+	.row-#{$size}-eq {
+		@include respondto($size) {
+			display: table;
+			width: 100%;
+			height: 100%;
+
+			> [class*='col-'] {
+				display: table-cell;
+				float: none;
+				height: 100%;
+				margin-top: 0;
+				margin-bottom: 0;
+				vertical-align: top;
+			}
+
+			> .col-middle {
+				vertical-align: middle;
+			}
+
+			> .col-bottom {
+				vertical-align: bottom;
+			}
+		}
+	}
+}
+
+/* Fix for when column height is varying. Floats may break the layout if previus columns content is higher. */
+.row-blocks {
+	> [class*='col-'] {
+		display: inline-block;
+		float: none;
+		margin-right: -4px;
+		vertical-align: top;
+	}
+}
+
+@each $size in $size-list {
+	.row-#{$size}-blocks {
+		@include respondto($size) {
+			> [class*='col-'] {
+		        display: inline-block;
+		        float: none;
+		        margin-right: -4px;
+		        vertical-align: top;
+	        }
+		}
+	}
+}
+
+.row-blocks .col-middle,
+.col-middle {
+	vertical-align: middle;
+}
+
+.row-blocks .col-bottom,
+.col-bottom {
+	vertical-align: bottom;
+}
+
+.row-col-rulers {
+	> [class*='col-'] {
+		border-left: solid 1px $gray;
+
+		&:first-child {
+			border-left: none;
+		}
+	}
+}
+
+@each $size in $size-list {
+	.row-#{$size}-rulers {
+		@include respondto($size) {
+			> [class*='col-'] {
+				border-left: solid 1px $gray;
+
+				&:first-child {
+					border-left: none;
+				}
+			}
+		}
+	}
+}

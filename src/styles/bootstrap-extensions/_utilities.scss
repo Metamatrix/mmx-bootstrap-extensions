@@ -1,0 +1,67 @@
+﻿//
+// Utility classes
+// --------------------------------------------------
+
+$sizeList: xs sm md lg;
+$units: '-0' '-small' '' '-medium' '-large' '-xlarge';
+$unitValues: 0 5px 10px 20px 30px 50px;
+
+//
+// Margin helper classes
+// m-[TargetViewPortSize]-[ApplyMarginsTo]-[MarginSize]
+// --------------------------------------------------
+
+@each $viewportSize in $sizeList {
+	@include respondto($viewportSize) {
+		@each $unit in $units {
+			$i: index($units, $unit);
+			.m-#{$viewportSize}-a#{$unit} {
+				margin: nth($unitValues, $i) !important;
+			}
+
+			.m-#{$viewportSize}-t#{$unit} {
+				margin-top: nth($unitValues, $i) !important;
+			}
+
+			.m-#{$viewportSize}-r#{$unit} {
+				margin-right: nth($unitValues, $i) !important;
+			}
+
+			.m-#{$viewportSize}-b#{$unit} {
+				margin-bottom: nth($unitValues, $i) !important;
+			}
+
+			.m-#{$viewportSize}-l#{$unit} {
+				margin-left: nth($unitValues, $i) !important;
+			}
+
+			.m-#{$viewportSize}-x#{$unit} {
+				margin-left: nth($unitValues, $i) !important;
+				margin-right: nth($unitValues, $i) !important;
+			}
+
+			.m-#{$viewportSize}-y#{$unit} {
+				margin-top: nth($unitValues, $i) !important;
+				margin-bottom: nth($unitValues, $i) !important;
+			}
+		}
+	}
+}
+
+
+/* Centers the element based on the widts of the contents */
+.center-content {
+	width: intrinsic; /* For Safari, see https://developer.mozilla.org/en-US/docs/CSS/width */
+    width: -moz-fit-content;
+    width: -webkit-fit-content;
+    width: fit-content;
+	display: table;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.text-right-small {
+	@include respondto(sm) {
+		text-align: right;	
+	}
+}

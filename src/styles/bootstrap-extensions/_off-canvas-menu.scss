@@ -1,0 +1,122 @@
+﻿
+$off-canvas-calculated-menu-x: ($off-canvas-menu-width + $off-canvas-menu-offset) !default;
+$off-canvas-calculated-menu-x-sm: ($off-canvas-menu-width-sm + $off-canvas-menu-offset) !default;
+$off-canvas-menu-bg: #fff !default;
+
+#off-canvas-container,
+.off-canvas-active {
+	overflow: hidden;
+}
+
+.off-canvas-backdrop {
+	background: $off-canvas-backdrop-bg;
+	opacity: $off-canvas-backdrop-opacity;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	left: 0;
+	top: 0;
+	display: none;
+	@include transition(0.3s ease all);
+
+	&:hover {
+		opacity: $off-canvas-backdrop-hover-opacity;
+	}
+}
+
+.open {
+	.off-canvas-backdrop {
+		display: block;
+	}
+}
+
+.off-canvas-menu {
+	position: fixed;
+	height: 100%;
+	background: white;
+	z-index: 1000;
+	top: 0;
+	width: $off-canvas-menu-width-sm;
+	@include transition(0.3s ease all);
+
+	@include respondto(md) {
+		width: $off-canvas-menu-width;
+	}
+
+	.close {
+		opacity: 1;
+		position: absolute;
+		top: 10px;
+		background: $brand-primary;
+		color: white;
+		padding: 12px;
+		pointer-events: none;
+		z-index: 1; // TODO: What z-index to use?
+	}
+}
+
+.open {
+	.off-canvas-menu {
+		@include transform(translate(0,0));
+		@include box-shadow(0px 0px 20px rgba(0, 0, 0, 0.50));
+	}
+}
+
+.off-canvas-left {
+	@include transform(translate(-$off-canvas-calculated-menu-x-sm,0));
+
+	.close {
+		left: 100%;
+	}
+
+	@include respondto(md) {
+		@include transform(translate(-$off-canvas-calculated-menu-x,0));
+	}
+}
+
+.off-canvas-right {
+	@include transform(translate($off-canvas-calculated-menu-x-sm,0));
+	right: 0;
+
+	.close {
+		right: 100%;
+	}
+
+	@include respondto(md) {
+		@include transform(translate($off-canvas-calculated-menu-x,0));
+	}
+}
+
+.off-canvas-content {
+	overflow-y: scroll;
+	position: relative;
+	height: 100%;
+	-webkit-overflow-scrolling: touch;
+	padding: $off-canvas-inner-padding;
+	background: $off-canvas-content-bg;
+
+	&::-webkit-scrollbar {
+		display: none;
+	}
+}
+
+.no-csstransforms {
+	.off-canvas-left.off-canvas-menu {
+		left: -$off-canvas-calculated-menu-x;
+
+		&.open {
+			left: 0;
+		}
+	}
+}
+
+.no-csstransforms {
+	.off-canvas-right.off-canvas-menu {
+		right: -$off-canvas-calculated-menu-x;
+
+		&.open {
+			right: 0;
+		}
+	}
+}

@@ -1,0 +1,88 @@
+//
+// Typography
+// --------------------------------------------------
+
+$sizeList: sm md lg;
+
+/* Internet explorer applies focus to elements that cannot be focues, like divs, etc */
+a,
+input,
+textarea,
+button {
+    &:focus {
+	    outline: $focused-element-outline;
+    }
+}
+
+// Selected text
+// -------------------------
+
+::selection {
+	color: $selected-text-color;
+	background-color: $selected-text-bg; /* WebKit/Blink Browsers */
+}
+
+::-moz-selection {
+	color: $selected-text-color;
+	background-color: $selected-text-bg; /* Gecko Browsers */
+}
+
+// Contextual colors
+// -------------------------
+
+@include text-emphasis-variant('.text-secondary', $brand-secondary);
+
+@include text-emphasis-variant('.text-color', $text-color);
+
+@include text-emphasis-variant('.text-black', $black);
+
+@include text-emphasis-variant('.text-white', $white);
+
+
+// Contextual backgrounds
+// -------------------------
+
+// Inverted text colors if needed
+/*.bg-primary {
+  color: #fff;
+}*/
+
+@include bg-variant('.bg-secondary', $brand-secondary);
+
+
+// Font helper classes
+// -------------------------
+
+.font-xsmall {
+	font-size: $font-size-small - 2;
+}
+
+.font-small {
+	font-size: $font-size-small;
+}
+
+.font-base {
+	font-size: $font-size-base;
+}
+
+.font-large {
+	font-size: $font-size-large;
+}
+
+.font-sans-serif {
+	font-family: $font-family-sans-serif;
+}
+
+.font-serif {
+	font-family: $font-family-serif;
+}
+
+@each $viewportSize in $sizeList {
+	@include respondto($viewportSize) {
+
+		.text-#{$viewportSize}-left   { text-align: left !important; }
+		.text-#{$viewportSize}-right  { text-align: right !important; }
+		.text-#{$viewportSize}-center { text-align: center !important; }
+
+	}
+}

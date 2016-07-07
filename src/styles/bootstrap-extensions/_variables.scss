@@ -1,0 +1,139 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Colors
+
+$white:					#fff !default;
+$black:					#000 !default;
+$brand-secondary:       #d23d3d !default;
+
+
+//== Media queries breakpoints
+
+$screen-xl:						1400px;
+
+
+//== Typography
+
+$focused-element-outline: solid 1px $brand-primary !default;
+
+$selected-text-color: $white !default;
+$selected-text-bg: $brand-primary !default;
+
+//== Buttons
+//
+//## For each of Bootstrap's buttons, define text, background and border color.
+
+$btn-secondary-color:              $text-color !default;
+$btn-secondary-bg:                 $brand-secondary !default;
+$btn-secondary-border:             transparent !default;
+
+
+//== Icons
+
+$icon-font-size-base:		20px !default;
+
+
+//== Card
+
+$card-spacer-x:					20px !default;
+$card-spacer-y:					20px !default;
+$card-block-padding:			20px !default;
+$card-border-width:				1px !default;
+$card-border-radius:			$border-radius-base !default;
+$card-border-color:				transparent !default;
+$card-border-radius-inner:		$border-radius-small !default;
+
+$card-default-background:		transparent !default;
+$card-cap-color:				$text-color !default;
+$card-cap-bg:					$gray-light !default;
+
+
+//== Labels
+//
+
+//** Secondary label background color
+$label-secondary-bg:            $brand-secondary !default;
+$label-secondary-color:			$text-color !default;
+
+
+//== Lists
+//
+
+$article-list-margin:			30px !default;
+$link-list-margin:				20px !default;
+$link-list-inline-spacing:		50px !default;
+
+
+//== Forms
+//
+
+$styled-checkbox-size:						30px !default;
+$styled-checkbox-label-margin:				15px !default;
+$styled-checkbox-default-bg:				#fff !default;
+$styled-checkbox-default-border:			solid 3px $text-color !default;
+$styled-checkbox-checked-default-bg:        $gray-light !default;
+$styled-checkbox-checked-default-border:    solid 3px transparent !default;
+$styled-checkbox-primary-bg:				#fff !default;
+$styled-checkbox-primary-border:			solid 3px $brand-primary !default;
+$styled-checkbox-checked-primary-bg:        $brand-primary !default;
+$styled-checkbox-checked-primary-border:    solid 3px $brand-primary !default;
+$styled-checkbox-secondary-bg:				#fff !default;
+$styled-checkbox-secondary-border:			solid 3px $brand-secondary !default;
+$styled-checkbox-checked-secondary-bg:        $brand-secondary !default;
+$styled-checkbox-checked-secondary-border:    solid 3px $brand-secondary !default;
+$styled-checkbox-icon:						"\f00c" !default;
+$styled-checkbox-icon-color:				"fff" !default;
+
+
+//== Tree menu
+//
+
+$nav-tree-border-radius: $border-radius-small !default;
+$nav-tree-link-color: $white !default;
+$nav-tree-link-bg: $brand-primary !default;
+$nav-tree-link-hover-color: $white !default;
+$nav-tree-link-hover-bg: lighten($nav-tree-link-bg, 10%) !default;
+$nav-tree-active-link-color: $white !default;
+$nav-tree-active-link-bg: $brand-primary !default;
+$nav-tree-active-link-hover-color: $white !default;
+$nav-tree-active-link-hover-bg: lighten($nav-tree-active-link-bg, 10%) !default;
+
+$nav-tree-sublevel-border-radius: $border-radius-small !default;
+$nav-tree-sublevel-link-color: $brand-primary !default;
+$nav-tree-sublevel-link-bg: $gray-light !default;
+$nav-tree-sublevel-link-hover-color: $brand-primary !default;
+$nav-tree-sublevel-link-hover-bg: lighten($nav-tree-sublevel-link-bg, 10%) !default;
+$nav-tree-sublevel-active-link-color: $black !default;
+$nav-tree-sublevel-active-link-bg: $gray-light !default;
+$nav-tree-sublevel-active-link-hover-color: $black !default;
+$nav-tree-sublevel-active-link-hover-bg: lighten($nav-tree-sublevel-active-link-bg, 10%) !default;
+
+$nav-tree-link-spacing-y: 0 !default;
+$nav-tree-link-border: solid 1px #ccc !default;
+$nav-tree-link-padding: 15px 20px !default; 
+$nav-sublevel-indent: 20px !default;
+
+
+//== Off canvas menu
+
+$off-canvas-menu-width:				420px !default;
+$off-canvas-menu-width-sm:			280px !default;
+$off-canvas-menu-offset:			60px !default;
+$off-canvas-inner-padding:			0 !default;
+$off-canvas-content-bg:				#fff !default;
+$off-canvas-backdrop-bg:			#000 !default;
+$off-canvas-backdrop-opacity:		.85 !default;
+$off-canvas-backdrop-hover-opacity:	.75 !default;
+
+
+//== Button list
+
+$btn-list-margin-right: .5em !default;
+$btn-list-margin-bottom: .5em !default;
+
+
+//== Icon link
+$icon-link-margin: .25rem !default;

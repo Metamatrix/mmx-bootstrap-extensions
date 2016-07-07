@@ -1,0 +1,46 @@
+-
+	var utils = {
+		uniqueId: (function() {
+		    var ids = {},
+		    	chars = '0123456789ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'.split(''),
+		    	defaultLenght = 10;
+
+		    function genId(length) {
+		    	var str = '';
+
+			    for (var i = 0; i < length; i++) {
+			        str += chars[Math.floor(Math.random() * chars.length)];
+			    }
+
+			    return str;
+		    }
+		    	
+	    	return function(length) {
+			    var id;
+
+			    length = length || defaultLenght;
+
+			    while(!id || ids[id]) {
+			    	id = genId(length);
+			    }
+
+			    return id;
+		    }
+		})(),
+		hex2rgb: function(hex) {
+			if((hex.length === 4 || hex.length === 7) && hex.indexOf("#") === 0) {
+				hex = hex.substring(1);
+			}
+
+			if(hex.length === 3) {
+				hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+			}
+
+		    var bigint = parseInt(hex, 16),
+		    	r = (bigint >> 16) & 255,
+		    	g = (bigint >> 8) & 255,
+		    	b = bigint & 255;
+
+		    return { r: r, g: g, b: b };
+		}
+	};

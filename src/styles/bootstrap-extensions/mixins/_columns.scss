@@ -1,0 +1,26 @@
+﻿@mixin columns($columns) {
+	-webkit-columns: $columns;
+    -moz-columns: $columns;
+    columns: $columns;
+
+	-webkit-column-gap: $padding-large-horizontal;
+    -moz-column-gap: $padding-large-horizontal;
+    column-gap: $padding-large-horizontal;
+
+	li {
+		-webkit-column-break-inside: avoid;
+		-moz-column-break-inside: avoid;
+		column-break-inside: avoid;
+
+		// Break after 2 or 3 items
+		&:nth-child(2):nth-last-child(3),
+		&:nth-child(3):nth-last-child(3),
+		&:nth-child(3):nth-last-child(4),
+		&:nth-child(4):nth-last-child(4),
+		&:nth-child(4):nth-last-child(5) {
+			-webkit-column-break-after: always;
+			-moz-column-break-after: always;
+			column-break-after: always;
+		}
+	}
+}

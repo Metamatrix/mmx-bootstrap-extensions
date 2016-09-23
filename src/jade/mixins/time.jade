@@ -1,7 +1,0 @@
-﻿mixin datetime(year, month, date, hours, minutes, pubdate)
-	-var timeDisplay = year + "-" + month + "-" + date + " " + hours + ":" + minutes
-	time(datetime=timeDisplay)= timeDisplay
-
-mixin date(year, month, date, pubdate)
-	-var timeDisplay = year + "-" + month + "-" + date
-	time(datetime=timeDisplay,pubdate=pubdate)= timeDisplay

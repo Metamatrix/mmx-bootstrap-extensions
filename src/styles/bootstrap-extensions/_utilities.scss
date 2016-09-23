@@ -3,8 +3,8 @@
 // --------------------------------------------------
 
 $sizeList: xs sm md lg;
-$units: '-0' '-small' '' '-medium' '-large' '-xlarge';
-$unitValues: 0 5px 10px 20px 30px 50px;
+$units: '-0' '-xsmall' 'small' '-base' '-large' '-xlarge';
+$unitValues: 0 $margin-xs $margin-small $margin-base $margin-large $margin-xl;
 
 //
 // Margin helper classes
@@ -48,20 +48,13 @@ $unitValues: 0 5px 10px 20px 30px 50px;
 	}
 }
 
-
 /* Centers the element based on the widts of the contents */
 .center-content {
 	width: intrinsic; /* For Safari, see https://developer.mozilla.org/en-US/docs/CSS/width */
-    width: -moz-fit-content;
-    width: -webkit-fit-content;
-    width: fit-content;
+  width: -moz-fit-content;
+  width: -webkit-fit-content;
+  width: fit-content;
 	display: table;
 	margin-left: auto;
 	margin-right: auto;
-}
-
-.text-right-small {
-	@include respondto(sm) {
-		text-align: right;	
-	}
 }

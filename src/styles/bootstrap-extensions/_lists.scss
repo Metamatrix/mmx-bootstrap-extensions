@@ -6,8 +6,13 @@
 .article-list {
 	@extend .list-unstyled;
 
-	> li {
+	> li,
+	.article-list-item {
 		margin: $article-list-margin 0;
+	}
+
+	p {
+		color: $text-color;
 	}
 }
 

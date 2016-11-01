@@ -80,12 +80,12 @@ $size-list: xs sm md lg;
 
 .row-blocks .col-middle,
 .col-middle {
-	vertical-align: middle;
+	vertical-align: middle !important;
 }
 
 .row-blocks .col-bottom,
 .col-bottom {
-	vertical-align: bottom;
+	vertical-align: bottom !important;
 }
 
 .row-col-rulers {

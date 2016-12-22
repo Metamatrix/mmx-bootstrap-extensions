@@ -1,6 +1,6 @@
 {
   "name": "mmx-bootstrap-extensions",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "CSS-classes and JavaScript to extend Bootstrap",
   "main": "index.js",
   "scripts": {

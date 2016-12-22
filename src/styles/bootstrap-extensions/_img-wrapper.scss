@@ -1,0 +1,41 @@
+// Image wrapper
+// Responsive aspect ratio padding hack for image containers
+
+$img-wrapper-bg: transparent !default;
+
+@mixin img-wrapper-size($name, $width, $height) {
+  .img-wrapper-#{$name}:before {
+    padding-top: percentage($height / $width);
+  }
+}
+
+.img-wrapper {
+	position: relative;
+	width: 100%;
+	background-color: $img-wrapper-bg;
+}
+
+.img-wrapper:before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+  width: 100%;
+}
+
+.img-wrapper > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+@include img-wrapper-size("3x2", 3, 2);
+@include img-wrapper-size("4x3", 4, 3);
+@include img-wrapper-size("16x9", 16, 9);

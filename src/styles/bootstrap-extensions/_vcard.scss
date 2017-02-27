@@ -1,0 +1,93 @@
+// Vcard
+// -------------------------
+
+.vcard {
+	display: table;
+	table-layout: fixed;
+	width: 100%;
+	margin-bottom: $line-height-computed;
+
+	text-align: center;
+
+	@include respondto(sm) { 
+		text-align: left; 
+	}
+}
+
+.vcard-img,
+.vcard-body {
+
+	@include respondto(sm) {  
+		display: table-cell;
+		vertical-align: middle;
+	}
+}
+
+.vcard-img {
+	width: $vcard-img-width;
+	margin: 0 auto 10px;
+
+	@include respondto(sm) { 
+		margin: 0; 
+		width: $vcard-img-width + $vcard-img-margin;
+		padding-right: $vcard-img-margin;
+		padding-left: 0;
+	}
+}
+
+.vcard-img-right {
+	width: $vcard-img-width;
+	margin: 10px auto 0;
+
+	@include respondto(sm) { 
+		margin: 0; 
+		width: $vcard-img-width + $vcard-img-margin;
+		padding-right: 0;
+		padding-left: $vcard-img-margin;
+	}
+}
+
+.vcard-body {	
+	font-size: $vcard-font-size;
+
+	p {
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.vcard-heading {
+	margin: 0 0 $line-height-computed / 4;
+	font-family: $vcard-heading-font-family;
+	font-size: $vcard-heading-font-size;
+}
+
+.vcard-title {
+	display: block;
+	font-weight: bold;
+	color: $vcard-title-color;
+	margin-bottom: $line-height-computed;
+
+	@include respondto(sm) { 
+		margin-bottom: $line-height-computed / 2; 
+	}
+}
+
+.vcard-name {
+
+}
+
+.vcard-dl {
+	margin: 0;
+
+	dt,
+	dd {
+		display: block;
+		margin: 0;
+	}
+
+	dd + dt {
+		margin-top: $line-height-computed / 4;
+	}
+}

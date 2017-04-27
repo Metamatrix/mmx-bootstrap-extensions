@@ -81,9 +81,9 @@ $link-list-inline-spacing:		50px !default;
 $styled-checkbox-size:						30px !default;
 $styled-checkbox-label-margin:				15px !default;
 $styled-checkbox-default-bg:				#fff !default;
-$styled-checkbox-default-border:			solid 3px $text-color !default;
+$styled-checkbox-default-border:			solid 3px $gray !default;
 $styled-checkbox-checked-default-bg:        $gray-light !default;
-$styled-checkbox-checked-default-border:    solid 3px transparent !default;
+$styled-checkbox-checked-default-border:    solid 3px $gray-light !default;
 $styled-checkbox-primary-bg:				#fff !default;
 $styled-checkbox-primary-border:			solid 3px $brand-primary !default;
 $styled-checkbox-checked-primary-bg:        $brand-primary !default;
@@ -92,8 +92,12 @@ $styled-checkbox-secondary-bg:				#fff !default;
 $styled-checkbox-secondary-border:			solid 3px $brand-secondary !default;
 $styled-checkbox-checked-secondary-bg:        $brand-secondary !default;
 $styled-checkbox-checked-secondary-border:    solid 3px $brand-secondary !default;
-$styled-checkbox-icon:						"\f00c" !default;
-$styled-checkbox-icon-color:				"fff" !default;
+$styled-checkbox-default-icon-color:			"#fff" !default;
+$styled-checkbox-default-icon:						url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m477 162c0 7-2 14-8 19l-206 207-39 39c-6 5-12 8-20 8-7 0-14-3-19-8l-142-142c-6-6-8-12-8-20 0-7 2-14 8-19l38-39c6-5 12-8 20-8 7 0 14 3 19 8l84 84 188-188c5-5 12-8 19-8 8 0 14 3 20 8l38 39c6 6 8 12 8 20z" fill="#{$styled-checkbox-default-icon-color}"/></svg>') !default;
+$styled-checkbox-primary-icon-color:			"#fff" !default;
+$styled-checkbox-primary-icon:						url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m477 162c0 7-2 14-8 19l-206 207-39 39c-6 5-12 8-20 8-7 0-14-3-19-8l-142-142c-6-6-8-12-8-20 0-7 2-14 8-19l38-39c6-5 12-8 20-8 7 0 14 3 19 8l84 84 188-188c5-5 12-8 19-8 8 0 14 3 20 8l38 39c6 6 8 12 8 20z" fill="#{$styled-checkbox-primary-icon-color}"/></svg>') !default;
+$styled-checkbox-secondary-icon-color:			"#fff" !default;
+$styled-checkbox-secondary-icon:						url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="m477 162c0 7-2 14-8 19l-206 207-39 39c-6 5-12 8-20 8-7 0-14-3-19-8l-142-142c-6-6-8-12-8-20 0-7 2-14 8-19l38-39c6-5 12-8 20-8 7 0 14 3 19 8l84 84 188-188c5-5 12-8 19-8 8 0 14 3 20 8l38 39c6 6 8 12 8 20z" fill="#{$styled-checkbox-secondary-icon-color}"/></svg>') !default;
 
 
 //== Tree menu

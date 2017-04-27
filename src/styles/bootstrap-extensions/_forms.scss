@@ -2,14 +2,17 @@
 // Forms
 // --------------------------------------------------
 
-@mixin styled-input-variation($name, $color, $bg-color, $border, $checked-bg-color, $checked-border) {
+@mixin styled-input-variation($name, $color, $bg-color, $border, $checked-bg-color, $checked-border, $icon) {
 	.styled-input-#{$name} {
 		.input-control {
 			background: $bg-color;
 			border: $border;
-			color: $color;
-			-webkit-transition: background .25s;
-			transition: background .25s;
+
+			&:hover {
+				&:before {
+					content: $icon;
+				}
+			}
 		}
 
 		input[type=checkbox],
@@ -18,6 +21,15 @@
 				~ .input-control {
 					background: $checked-bg-color;
 					border: $checked-border;
+
+					&:before {
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+						content: $icon;
+					}
 				}
 			}
 		}
@@ -63,8 +75,9 @@
 		width: $styled-checkbox-size;
 		height: $styled-checkbox-size;
 		background: $styled-checkbox-default-bg;
-		border: $styled-checkbox-primary-border;
-		color: $gray-dark;
+		border: $styled-checkbox-default-border;
+		-webkit-transition: background .25s;
+		transition: background .25s;
 
 		&:hover {
 			&:before {
@@ -73,15 +86,8 @@
 				left: 0;
 				right: 0;
 				bottom: 0;
-				font-family: "FontAwesome";
-				font-size: 1.1em;
-				text-rendering: auto;
-				-webkit-font-smoothing: antialiased;
-				-moz-osx-font-smoothing: grayscale;
-				content: $styled-checkbox-icon;
-				text-align: center;
+				content: $styled-checkbox-default-icon;
 				line-height: $styled-checkbox-size;
-				color: $styled-checkbox-icon-color;
 				opacity: .5;
 			}
 		}
@@ -100,7 +106,7 @@
 		&:checked {
 			~ .input-control {
 				background: $styled-checkbox-checked-default-bg;
-				border: $styled-checkbox-checked-primary-border;
+				border: $styled-checkbox-checked-default-border;
 
 				&:before {
 					position: absolute;
@@ -108,15 +114,7 @@
 					left: 0;
 					right: 0;
 					bottom: 0;
-					font-family: "FontAwesome";
-					font-size: 1.1em;
-					text-rendering: auto;
-					-webkit-font-smoothing: antialiased;
-					-moz-osx-font-smoothing: grayscale;
-					content: $styled-checkbox-icon;
-					text-align: center;
-					line-height: $styled-checkbox-size;
-					color: $styled-checkbox-icon-color;
+					content: $styled-checkbox-default-icon;
 				}
 			}
 		}
@@ -189,8 +187,8 @@
     /* in case of FastClick lib use */
 }
 
-@include styled-input-variation("primary", $white, $styled-checkbox-primary-bg, $styled-checkbox-primary-border, $styled-checkbox-checked-primary-bg, $styled-checkbox-checked-primary-border);
-@include styled-input-variation("secondary", $text-color, $styled-checkbox-secondary-bg, $styled-checkbox-secondary-border, $styled-checkbox-checked-secondary-bg, $styled-checkbox-checked-secondary-border);
+@include styled-input-variation("primary", $white, $styled-checkbox-primary-bg, $styled-checkbox-primary-border, $styled-checkbox-checked-primary-bg, $styled-checkbox-checked-primary-border, $styled-checkbox-primary-icon);
+@include styled-input-variation("secondary", $text-color, $styled-checkbox-secondary-bg, $styled-checkbox-secondary-border, $styled-checkbox-checked-secondary-bg, $styled-checkbox-checked-secondary-border, $styled-checkbox-secondary-icon);
 
 // Error and validation for asp.net mvc / jQuery validation
 //
